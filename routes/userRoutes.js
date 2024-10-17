@@ -12,6 +12,6 @@ router.delete("/deleteUser/:id", deleteUser); // Added an ID parameter for delet
 router.get("/:id", filterUser);
 
 // Route to update a user's details
-router.put("/updateUser/:email", updateUser); // Changed to PUT and added ID parameter for updates
+router.put("/updateUser/:email", updateUser);
 
 export default router; // Export the router for use in other parts of the application
