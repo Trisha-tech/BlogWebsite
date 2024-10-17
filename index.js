@@ -10,16 +10,16 @@ dotenv.config();
 
 const app = express();
 
-connectdb.connect();
+connectdb();
 
 app.use(cors());
-app.use(bodyParser.json({ extended: true }));
+app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const PORT = 8000;
 
 //api redirecting to /routes directory for each type of request
-app.get("/api/user",userRoutes);
-app.get("/api/blogs",blogRoutes);
+app.use("/api/user",userRoutes);
+app.use("/api/blogs",blogRoutes);
 
 app.listen(PORT, () => console.log(`Server is running successfully on PORT ${PORT}`));

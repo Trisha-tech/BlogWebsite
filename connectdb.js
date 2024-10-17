@@ -1,8 +1,7 @@
-import mongoose from 'mongoose';
-import dotenv from 'dotenv';
+import mongoose, { connect } from 'mongoose';
 const connectDB = async () => {
     try {
-      const conn = await mongoose.connect(dbURL || "mongodb:localhost:27017/blogsite");
+      const conn = await mongoose.connect("mongodb://localhost:27017/blogsite");
       console.log(`MongoDB Connected: ${conn.connection.host}`);
     } catch (error) {
       console.error(`Error: ${error.message}`);
@@ -10,4 +9,4 @@ const connectDB = async () => {
     }
   };
   
-export default mongoose;
+export default connectDB;
